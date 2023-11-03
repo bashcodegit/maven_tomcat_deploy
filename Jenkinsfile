@@ -1,21 +1,15 @@
-pipeline{
+pipeline {
     agent any
     stages {
-        stage("SCM checkout") {
+        stage("Build with Maven") {
             steps {
-                checkout scm
-            }
-        }
-        
-        stage("Build") {
-            steps {
-                sh 'mvn clean package'
+                sh 'docker-compose build'
             }
         }
 
-        stage("jar"){
+        stage("Deploy with Docker Compose") {
             steps {
-                sh 'java -jar /target/my-maven-tom-1.0-SNAPSHOT.jar'
+                sh 'docker-compose up -d'
             }
         }
 
