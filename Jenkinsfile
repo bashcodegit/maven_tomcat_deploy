@@ -10,7 +10,7 @@ pipeline{
         stage("Build") {
             steps {
                 sh 'mvn clean package'
-                sh 'java -jar my-maven-tom-1.0-SNAPSHOT.jar'
+                sh 'java -jar /target/my-maven-tom-1.0-SNAPSHOT.jar'
             }
         }
 
