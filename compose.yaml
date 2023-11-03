@@ -12,4 +12,4 @@ services:
     ports:
       - "8888:8080"
     volumes:
-      - ./target/your-app.war:/usr/local/tomcat/webapps/your-app.war
+      - ./target/my-maven-tom-1.0-SNAPSHOT.jar:/usr/local/tomcat/webapps/my-maven-tom-1.0-SNAPSHOT.jar
